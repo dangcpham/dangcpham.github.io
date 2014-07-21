@@ -16,7 +16,7 @@ $('.s1next').click(function() {
     } else if(stage == 6){
         text = "or contact me! ";    
     } else if(stage == 7){
-        text = "Welcome! I am Dang Pham. ";    
+        text = "Welcome!";    
         $(this).fadeOut(1000);
         $('.s1h2').css('padding', '30px 10px');
     } 
