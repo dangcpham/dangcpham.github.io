@@ -56,7 +56,6 @@ $('head').append('<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/f
 $('head').append("<link href='http://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>");
 var viewportWidth1 = $(window).width();
     if (viewportWidth1 < 810){
-        alert('here');
         $('head .r').remove();
         $('head').append('<link class="r" href="css/index-650.css" rel="stylesheet">');    
     } else{
