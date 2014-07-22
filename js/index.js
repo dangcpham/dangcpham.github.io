@@ -54,6 +54,9 @@ $(window).resize(function() {
 });
 $('head').append('<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">');
 $('head').append("<link href='http://fonts.googleapis.com/css?family=Slabo+13px' rel='stylesheet' type='text/css'>");
+$('.s2s1').append('<iframe width="80%" height="300px" defer src="//www.youtube.com/embed/78hD6JIXBV8" frameborder="0" allowfullscreen></iframe><span><br><br>Chopin Nocturne in C Sharp Minor, Opus Posthumous</span>');
+$('.s2s2').append('<iframe width="80%" height="300px" defer src="//www.youtube.com/embed/DmzoCIB3NWc" frameborder="0" allowfullscreen></iframe><span><br><br>Prelude no 14 Well Tempered Clavier 1 BWV 859, Bach </span>');
+$('.s2s3').append('<iframe width="80%" height="300px" defer src="//www.youtube.com/embed/1wYI2f-fUmo" frameborder="0" allowfullscreen></iframe><span><br><br>Piano Cover for Demons-Imagine Dragons</span>');
 var viewportWidth1 = $(window).width();
     if (viewportWidth1 < 810){
         $('head .r').remove();
