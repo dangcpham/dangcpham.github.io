@@ -96,10 +96,10 @@ var viewportWidth1 = $(window).width();
 }
 $(window).scroll(function() {
     var scrolldist = $(window).scrollTop();
-    if ( scrolldist > 150){
+    if ( scrolldist > 200){
         $('.navi').css("position", "fixed")
         //$('.navi').css("background", "#256188")
-    } else if ( scrolldist < 150){
+    } else if ( scrolldist < 200){
         $('.navi').css("position", "absolute")
         //$('.navi').css("background", "#fff")
     }
