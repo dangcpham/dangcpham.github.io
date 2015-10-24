@@ -27,7 +27,7 @@ h1, h2, h3{
     border-bottom: 2px solid #16435d;
     padding-top: 20px;
     margin-left: 24px;
-    cursor: default;
+    cursor: pointer;
     z-index: 500; 
 }
 .navi code{
@@ -149,23 +149,23 @@ ul li a:hover{
     color: #7b1e25;
 }
 .projweb{    
-    position: absolute;
-    top: 1650px;
-    left: 30%;
+    position: relative;
+    top: 1690px;
     border-bottom: 2px solid #000;
+    max-width: 95%;
     cursor: pointer;
     color: #0b3571;
 }
 .s2b{
-    left: 2.5%;
-    position: absolute;
-    top: 1750px;
+    margin-left: 2.5%;
+    position: relative;
+    top: 1700px;
     width: 95%;
     max-width: 100%;
     text-align: left;
     display: block;    
     padding: 20px 5px 40px 5px;
-    border-bottom: 2px solid #1c385f;
+    text-overflow: ellipsis;
 }
 .s2b a{
     position: relative;
@@ -190,6 +190,9 @@ ul li a:hover{
     padding: 1px 0px 2px 0px;
     font-size: 1em;
     color: #1c385f;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .s2b p:hover{
     color: #8e265e;
@@ -198,10 +201,12 @@ ul li a:hover{
     color:  #7e268e;
     font-weight: 700;
     font-size: 1.2em;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .s3{
     position: absolute;
-    top: 3100px;
     width: 100%;
     height: 50px;
     color: #fff;

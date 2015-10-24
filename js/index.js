@@ -29,6 +29,16 @@ $('#researchlink').click(function() {
         scrollTop: $(".projweb").offset().top
     }, 1000);
 });
+$('#back').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
+});
+$('#aboutlink').click(function() {
+    $('html, body').animate({
+        scrollTop: $(".s1").offset().top
+    }, 1000);
+});
 $('#pianolink').click(function() {
     $('html, body').animate({
         scrollTop: $(".proj").offset().top
