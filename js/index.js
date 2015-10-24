@@ -24,9 +24,14 @@ $('.s1next').click(function() {
     stage += 1;
     $('.s1h2').html(text);
 });
-$('#projlink').click(function() {
+$('#researchlink').click(function() {
     $('html, body').animate({
-        scrollTop: $(".s2").offset().top
+        scrollTop: $(".projweb").offset().top
+    }, 1000);
+});
+$('#pianolink').click(function() {
+    $('html, body').animate({
+        scrollTop: $(".proj").offset().top
     }, 1000);
 });
 $('#contactlink').click(function () {
