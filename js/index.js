@@ -96,7 +96,6 @@ var viewportWidth1 = $(window).width();
 }
 $(window).scroll(function() {
     var scrolldist = $(window).scrollTop();
-    $('head title').text(scrolldist);
     if ( scrolldist > 150){
         $('.navi').css("position", "fixed")
         //$('.navi').css("background", "#256188")
