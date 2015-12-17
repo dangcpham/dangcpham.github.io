@@ -120,7 +120,7 @@ ul li a:hover{
 }
 .proj{
     position: absolute;
-    top: 620px;
+    top: 770px;
     left: 45%;
     text-align: center;
     color: #0b3571;
@@ -129,7 +129,7 @@ ul li a:hover{
 }
 .s2{
     position: absolute;
-    top: 650px;
+    top: 800px;
     left: 2.5%;
     width: 95%;
     height: 460px;
@@ -186,7 +186,7 @@ ul li a:hover{
 }
 .projweb{
     position: absolute;
-    top: 1130px;
+    top: 1280px;
     left: 45%;
     color: #0b3571;
     border-bottom: 2px solid #000;
@@ -195,7 +195,7 @@ ul li a:hover{
 .s2b{
     left: 2.5%;
     position: absolute;
-    top: 1250px;
+    top: 1300px;
     width: 95%;
     text-align: left;
     display: block;    
