@@ -61,7 +61,14 @@ ul li a:hover{
     border-bottom: 2px solid #072c3b;
 }
 .ci{
-    padding-left: 20px;
+    padding-right: 20px;
+}
+.ar{
+    font-size: 2.5em;
+}
+.ar:hover{
+    color: #19a57f;
+    cursor: pointer;
 }
 .sky-bg{
     height: 0px;

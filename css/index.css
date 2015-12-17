@@ -75,7 +75,14 @@ ul li a:hover{
     width: 100%;
 }
 .ci{
-    padding-left: 30px;
+    padding-right: 30px;
+}
+.ar{
+    font-size: 1.75em;
+}
+.ar:hover{
+    color: #19a57f;
+    cursor: pointer;
 }
 /* sky from http://codepen.io/AlienPiglet/pen/hvekG */
 .sky-bg{

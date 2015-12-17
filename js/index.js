@@ -40,6 +40,7 @@ function about() {
         $('.s1h2').css('padding', '30px 10px');
         
         $('.sky-bg').show()
+        $('.ar').fadeOut(1000)
     } 
     
     circref = "#c" + (stage+1).toString();
