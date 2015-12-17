@@ -96,7 +96,7 @@ $(window).load(function() {
     var viewportWidth = $(window).width();
     $('.s3').css('top', $(document).height());
     $(document).height($(document).height()+100);
-    if (viewportWidth < 650){
+    if (viewportWidth < 800){
         $('head .r').remove();
         $('head').append('<link class="r" href="css/index-650.css" rel="stylesheet">');    
     } else{
@@ -109,7 +109,7 @@ $(window).resize(function() {
     var viewportWidth = $(window).width();
     $('.s3').css('top', $(document).height());
     $(document).height($(document).height()+100);
-    if (viewportWidth < 650){
+    if (viewportWidth < 800){
         $('head .r').remove();
         $('head').append('<link class="r" href="css/index-650.css" rel="stylesheet">');    
     } else{
