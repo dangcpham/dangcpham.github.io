@@ -1,28 +1,63 @@
-
 var stage = 1;
-$('.s1next').click(function() {
-    var text = $('.s1h2').html();
-    
-    if (stage == 1){
-        text += ", my name is Dang! ";
+// code for sky drawing is from http://codepen.io/AlienPiglet/pen/hvekG
+function drawing() {
+	var c = document.getElementById('sky');
+	var ctx = c.getContext('2d');
+	var xMax = c.width = window.screen.availWidth;
+	var yMax = c.height = window.screen.availHeight;
+
+	var hmTimes = Math.round(xMax + yMax);	
+	
+	for(var i=0; i<=hmTimes; i++) {
+	  var randomX = Math.floor((Math.random()*xMax)+1);
+	  var randomY = Math.floor((Math.random()*yMax)+1);
+	  var randomSize = Math.floor((Math.random()*2)+1);
+	  var randomOpacityOne = Math.floor((Math.random()*9)+1);
+	  var randomOpacityTwo = Math.floor((Math.random()*9)+1);
+	  var randomHue = Math.floor((Math.random()*360)+1);
+    if(randomSize>1) {
+      ctx.shadowBlur = Math.floor((Math.random()*15)+5);
+      ctx.shadowColor = "white";
+	  }
+    ctx.fillStyle = "hsla("+randomHue+", 30%, 80%, ."+randomOpacityOne+randomOpacityTwo+")";
+	  ctx.fillRect(randomX, randomY, randomSize, randomSize);
+	}
+  
+}
+function about() {
+     var text1 = $('#lang').text();
+
+   if(stage == 1){
+        text1 += " I make websites, ";
     } else if(stage == 2){
-        text = "I make websites, ";
+        text1 += " play the piano, ";
     } else if(stage == 3){
-        text = "play the piano, ";
+        text1 += " and love Astronomy!";          
     } else if(stage == 4){
-        text = "and love Astronomy!";          
+        text1 += " Check out my works and research... ";    
     } else if(stage == 5){
-        text = "Check out my works and projects... ";    
-    } else if(stage == 6){
-        text = "or contact me! ";    
-    } else if(stage == 7){
-        text = "Welcome!";    
-        $(this).fadeOut(1000);
+        text1 += " or contact me! ";     
         $('.s1h2').css('padding', '30px 10px');
+        
+        $('.sky-bg').show()
     } 
     
+    circref = "#c" + (stage+1).toString();
+    $(circref).removeClass('fa-circle-o');
+    $(circref).addClass('fa-circle');
     stage += 1;
-    $('.s1h2').html(text);
+    $('#lang').text(text1);
+    
+}
+drawing();
+
+$('.s1').click(function() {
+    about()
+   
+});
+$('#sky ').click(function() {
+    about()
+   
 });
 $('#researchlink').click(function() {
     $('html, body').animate({

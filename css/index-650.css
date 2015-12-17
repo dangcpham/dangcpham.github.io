@@ -60,6 +60,13 @@ ul li a:hover{
     text-decoration: none;
     border-bottom: 2px solid #072c3b;
 }
+.ci{
+    padding-left: 20px;
+}
+.sky-bg{
+    height: 0px;
+    width: 0px;
+}
 .s1{
     margin-top: 5px;
     position: absolute;
@@ -90,7 +97,7 @@ ul li a:hover{
 }
 .proj{
     position: absolute;
-    top: 370px;
+    top: 720px;
     left: 40%;
     text-align: center;
     color: #0b3571;
@@ -98,7 +105,7 @@ ul li a:hover{
 }
 .s2{
     position: absolute;
-    top: 450px;
+    top: 800px;
     width: 100%;
     height: 400px; 
     padding: 50px 0 10px 0;
@@ -150,7 +157,7 @@ ul li a:hover{
 }
 .projweb{    
     position: relative;
-    top: 1690px;
+    top: 2040px;
     border-bottom: 2px solid #000;
     max-width: 95%;
     cursor: pointer;
@@ -159,7 +166,7 @@ ul li a:hover{
 .s2b{
     margin-left: 2.5%;
     position: relative;
-    top: 1700px;
+    top: 2050px;
     width: 95%;
     max-width: 100%;
     text-align: left;

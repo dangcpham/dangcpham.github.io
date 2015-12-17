@@ -61,13 +61,36 @@ ul li a:hover{
 .s1{
     margin: 0px;
     position: absolute;
-    top: 100px;
+    top: 150px;
     width: 100%;
     padding: 0px 0px 10px 0px;
     color: #fff;
-    background: #256188;
+    /* background: #256188; */
+    z-index: 1000;
     text-shadow: 0.5px 1px 2px #000;    
+    cursor: pointer;
 }
+#lang{
+    height: 100%;
+    width: 100%;
+}
+.ci{
+    padding-left: 30px;
+}
+/* sky from http://codepen.io/AlienPiglet/pen/hvekG */
+.sky-bg{
+    background: -webkit-linear-gradient(#00111e 30%, #033d5e);
+    background: -moz-linear-gradient(#00111e 30%, #033d5e);
+    background: -o-linear-gradient(#00111e 30%, #033d5e);
+    background: linear-gradient(#00111e 30%, #033d5e);
+    border-bottom: 4px solid #16759b;
+    border-top: 8px solid #16759b;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
 .s1h2{     
     max-width: 95%;
     padding: 0;
@@ -90,7 +113,7 @@ ul li a:hover{
 }
 .proj{
     position: absolute;
-    top: 350px;
+    top: 620px;
     left: 45%;
     text-align: center;
     color: #0b3571;
@@ -99,7 +122,7 @@ ul li a:hover{
 }
 .s2{
     position: absolute;
-    top: 400px;
+    top: 650px;
     left: 2.5%;
     width: 95%;
     height: 460px;
@@ -156,7 +179,7 @@ ul li a:hover{
 }
 .projweb{
     position: absolute;
-    top: 880px;
+    top: 1130px;
     left: 45%;
     color: #0b3571;
     border-bottom: 2px solid #000;
@@ -165,7 +188,7 @@ ul li a:hover{
 .s2b{
     left: 2.5%;
     position: absolute;
-    top: 1000px;
+    top: 1250px;
     width: 95%;
     text-align: left;
     display: block;    
