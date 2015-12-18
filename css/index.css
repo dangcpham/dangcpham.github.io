@@ -61,7 +61,7 @@ ul li a:hover{
 .s1{
     margin: 0px;
     position: absolute;
-    top: 150px;
+    top: 300px;
     width: 100%;
     padding: 0px 0px 10px 0px;
     color: #fff;
@@ -70,11 +70,18 @@ ul li a:hover{
     text-shadow: 0.5px 1px 2px #000;    
     cursor: pointer;
 }
+.infonav {
+    position: absolute;
+    top: 360px;
+    width: 100%;
+    max-height: 20px;
+}
 #lang{
     height: 100%;
     width: 100%;
 }
 .ci{
+    font-size: 2em;
     padding-right: 30px;
 }
 .ar{
