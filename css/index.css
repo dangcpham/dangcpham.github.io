@@ -101,6 +101,7 @@ ul li a:hover{
     background: linear-gradient(#00111e 30%, #033d5e);
     border-bottom: 4px solid #16759b;
     border-top: 8px solid #16759b;
+    top:100px;
     height: 700px;
     width: 100%;
     overflow: hidden;

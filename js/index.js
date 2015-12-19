@@ -1,5 +1,4 @@
-
-// code for sky drawing is from http://codepen.io/AlienPiglet/pen/hvekG
+// code for stars is from http://codepen.io/AlienPiglet/pen/hvekG
 function drawing() {
     var c = document.getElementById('sky');
     var ctx = c.getContext('2d');
@@ -7,28 +6,46 @@ function drawing() {
     var yMax = c.height = window.screen.availHeight;
 
     var hmTimes = Math.round(xMax + yMax);
+    var starcount = 0
+    var intervalID = ''
+        //for (var i = 0; i <= hmTimes; i++) {
+        //    setTimeout(function(){
+        //        var info = fill(c,ctx,xMax,yMax)
+        //        ctx.fillRect(info[0], info[1], info[2], info[3]);
+        //        ctx.stroke();
+        //        ctx.fill()
+        //    },2);
+        //    
+        //}
+    intervalID = setInterval(function () {
+        var info = gen(c, ctx, xMax, yMax)
+        ctx.fillRect(info[0], info[1], info[2], info[3])
+        starcount += 1
+        if (starcount > hmTimes) {
+            clearInterval(intervalID)
+        };
+    }, 30);
+}
 
-    for (var i = 0; i <= hmTimes; i++) {
-        var randomX = Math.floor((Math.random() * xMax) + 1);
-        var randomY = Math.floor((Math.random() * yMax) + 1);
-        var randomSize = Math.floor((Math.random() * 2) + 1);
-        var randomOpacityOne = Math.floor((Math.random() * 9) + 1);
-        var randomOpacityTwo = Math.floor((Math.random() * 9) + 1);
-        var randomHue = Math.floor((Math.random() * 360) + 1);
-        if (randomSize > 1) {
-            ctx.shadowBlur = Math.floor((Math.random() * 15) + 5);
-            ctx.shadowColor = "white";
-        }
-        ctx.fillStyle = "hsla(" + randomHue + ", 30%, 80%, ." + randomOpacityOne + randomOpacityTwo + ")";
-        ctx.fillRect(randomX, randomY, randomSize, randomSize);
+function gen(c, ctx, xMax, yMax) {
+    var randomX = Math.floor((Math.random() * xMax) + 1);
+    var randomY = Math.floor((Math.random() * yMax) + 1);
+    var randomSize = Math.floor((Math.random() * 2) + 1);
+    var randomOpacityOne = Math.floor((Math.random() * 9) + 1);
+    var randomOpacityTwo = Math.floor((Math.random() * 9) + 1);
+    var randomHue = Math.floor((Math.random() * 360) + 1);
+    if (randomSize > 1) {
+        ctx.shadowBlur = Math.floor((Math.random() * 3) + 1);
+        ctx.shadowColor = "white";
     }
-
+    ctx.fillStyle = "hsla(" + randomHue + ", 30%, 80%, ." + randomOpacityOne + randomOpacityTwo + ")";
+    return [randomX, randomY, randomSize, randomSize];
 }
 
 var stage = 0;
 
 function about() {
-    
+
     var text1 = $('#lang').html();
 
     for (i = 0; i < 7; i++) {
@@ -36,7 +53,7 @@ function about() {
         $(circref0).removeClass('fa-circle');
         $(circref0).addClass('fa-circle-o');
     }
-    
+
     if (stage == 0) {
         text1 = "<i class='fa fa-child'></i> <span id='lang'>Hello, my name is Dang. </span>";
     } else if (stage == 1) {
@@ -52,28 +69,32 @@ function about() {
     }
     circref = "#c" + (stage).toString();
     $(circref).removeClass('fa-circle-o');
-    $(circref).addClass('fa-circle');    
+    $(circref).addClass('fa-circle');
     $('#lang').html(text1);
-    
-    
+
+
 }
-function ani(){
-    $('#lang').css('position','relative');
+
+function ani() {
+    $('#lang').css('position', 'relative');
     $('#lang').animate({
-          left: '+=2000px'
+        left: '+=2000px'
     }, 500);
     $('#lang').animate({
-          left: '-=20000px'
+        left: '-=20000px'
     }, 0);
     setTimeout(about, 500);
     $('#lang').animate({
-          left: '0px'
+        left: '0px'
     });
 }
-drawing();
+
 $('#sky').click(function () {
     if (stage < 5) {
-        stage += 1
+        stage += 1;
+        ani()
+    } else if (stage == 5) {
+        stage = 0;
         ani()
     }
 
@@ -82,7 +103,7 @@ $('#forward').click(function () {
     if (stage < 5) {
         stage += 1;
         ani()
-    } else if (stage == 5){
+    } else if (stage == 5) {
         stage = 0;
         ani()
     }
@@ -92,7 +113,7 @@ $('#backward').click(function () {
     if (stage > 0) {
         stage -= 1;
         ani()
-    } else if(stage == 0){
+    } else if (stage == 0) {
         stage = 5;
         ani()
     }
@@ -135,7 +156,7 @@ $('#back').click(function () {
 });
 $('#aboutlink').click(function () {
     $('html, body').animate({
-        scrollTop: $(".sky-bg").offset().top + 190
+        scrollTop: $(".sky-bg").offset().top
     }, 1000);
 });
 $('#pianolink').click(function () {
@@ -166,7 +187,7 @@ $(window).load(function () {
         $('head .r').remove();
         $('head').append('<link class="r" href="css/index.css" rel="stylesheet">');
     }
-
+    drawing();
 });
 $(window).resize(function () {
     var viewportWidth = $(window).width();
