@@ -1,31 +1,39 @@
 @viewport {
-  width: 1300px auto;
+    width: 1300px auto;
 }
-html, body{
+
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: 'Slabo 13px', serif;
     max-width: 100%;
     overflow-x: hidden;
 }
-h1, h2, h3{
+
+h1,
+h2,
+h3 {
     text-decoration: none;
 }
-h1{
+
+h1 {
     color: #111;
     text-align: center;
 }
-.navi{
+
+.navi {
     position: absolute;
     width: 100%;
     right: 0px;
     top: 0px;
-    height: 100px;     
-    z-index:10000;
+    height: 100px;
+    z-index: 10000;
     background: #fff;
     border-bottom: 2px solid #16435d;
 }
-.navi h2{
+
+.navi h2 {
     text-align: left;
     font-weight: 100;
     position: absolute;
@@ -33,19 +41,22 @@ h1{
     padding-top: 20px;
     margin-left: 24px;
     cursor: pointer;
-    z-index: 500; 
+    z-index: 500;
 }
-ul{
+
+ul {
     list-style: none;
     padding-top: 20px;
     text-align: right;
 }
-li{
+
+li {
     padding: 0;
     margin: 0;
     display: inline-block;
 }
-ul li a{
+
+ul li a {
     padding: 10px 20px;
     text-decoration: none;
     font-weight: 600;
@@ -53,13 +64,15 @@ ul li a{
     cursor: pointer;
     color: #16435d;
 }
-ul li a:hover{
+
+ul li a:hover {
     background: #256188;
     color: #fff;
     text-decoration: none;
     border-bottom: 4px solid #072c3b;
 }
-.s1{
+
+.s1 {
     margin: 0px;
     position: absolute;
     top: 300px;
@@ -68,67 +81,78 @@ ul li a:hover{
     color: #fff;
     /* background: #256188; */
     z-index: 1000;
-    text-shadow: 0.5px 1px 2px #000;    
+    text-shadow: 0.5px 1px 2px #000;
     cursor: pointer;
 }
+
 .infonav {
     position: absolute;
     top: 360px;
     width: 100%;
     max-height: 20px;
 }
-#lang{
+
+#lang {
     height: 100%;
     width: 100%;
 }
-.ci{
+
+.ci {
     font-size: 2em;
     padding-right: 30px;
 }
-.ar{
+
+.ar {
     font-size: 1.75em;
     padding-right: 30px;
 }
-.ar:hover{
+
+.ar:hover {
     color: #19a57f;
     cursor: pointer;
 }
+
+
 /* sky from http://codepen.io/AlienPiglet/pen/hvekG */
-.sky-bg{
+
+.sky-bg {
     background: -webkit-linear-gradient(#00111e 30%, #033d5e);
     background: -moz-linear-gradient(#00111e 30%, #033d5e);
     background: -o-linear-gradient(#00111e 30%, #033d5e);
     background: linear-gradient(#00111e 30%, #033d5e);
     border-bottom: 4px solid #16759b;
     border-top: 8px solid #16759b;
-    top:100px;
+    top: 100px;
     height: 700px;
     width: 100%;
     overflow: hidden;
     cursor: pointer;
 }
 
-.s1h2{     
+.s1h2 {
     max-width: 95%;
     padding: 0;
     margin: 0;
-    border-bottom: 1.5px solid #fff;   
+    border-bottom: 1.5px solid #fff;
     font-size: 4em;
     text-align: center;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
-.s1next{
+
+.s1next {
     font-size: 3em;
-    text-align: right;   
+    text-align: right;
     padding-right: 600px;
     padding-top: 20px;
 }
-.s1next:hover{
+
+.s1next:hover {
     color: #19a57f;
     cursor: pointer;
 }
-.proj{
+
+.proj {
     position: absolute;
     top: 770px;
     left: 45%;
@@ -137,7 +161,8 @@ ul li a:hover{
     border-bottom: 2px solid #000;
     cursor: pointer;
 }
-.s2{
+
+.s2 {
     position: absolute;
     top: 800px;
     left: 2.5%;
@@ -146,55 +171,66 @@ ul li a:hover{
     display: inline-block;
     padding: 50px 5px 20px 5px;
     border-bottom: 2px solid #1c385f;
-}   
-.s2 a{
+}
+
+.s2 a {
     cursor: default;
 }
-.s2s1{
+
+.s2s1 {
     position: absolute;
     width: 33.33%;
-    height: 100%;  
+    height: 100%;
     left: 0;
     text-align: center;
     margin: 10px;
 }
-.s2s1 span{
+
+.s2s1 span {
     margin-top: 10px;
     color: #1c5f48;
 }
-.s2s1 span:hover{
+
+.s2s1 span:hover {
     color: #2d906a;
 }
-.s2s2{
+
+.s2s2 {
     position: absolute;
     width: 33.34%;
-    height: 100%;  
+    height: 100%;
     background: #fff;
-    left: 33.33%;    
+    left: 33.33%;
     text-align: center;
 }
-.s2s2 span{
+
+.s2s2 span {
     margin-top: 10px;
     color: #1c385f;
 }
-.s2s2 span:hover{  
+
+.s2s2 span:hover {
     color: #133e2c;
 }
-.s2s3{
+
+.s2s3 {
     position: absolute;
     width: 33.33%;
     height: 100%;
     left: 66.67%;
     text-align: center;
 }
-.s2s3 span{
+
+.s2s3 span {
     margin-top: 10px;
     color: #2b6bc3;
 }
-.s2s3 span:hover{  
+
+.s2s3 span:hover {
     color: #7b1e25;
 }
-.projweb{
+
+.projweb {
     position: absolute;
     top: 1280px;
     left: 45%;
@@ -202,48 +238,57 @@ ul li a:hover{
     border-bottom: 2px solid #000;
     cursor: pointer;
 }
-.s2b{
+
+.s2b {
     left: 2.5%;
     position: absolute;
     top: 1350px;
     width: 95%;
     text-align: left;
-    display: block;    
+    display: block;
     padding: 20px 5px 40px 5px;
 }
-.s2b a{
+
+.s2b a {
     position: relative;
-    text-decoration: none;    
+    text-decoration: none;
 }
-.s2b a span{
+
+.s2b a span {
     color: #19a57f;
     font-weight: 600;
-    font-size: 2em; 
+    font-size: 2em;
 }
-.s2b a span:hover{
-    color: #8e265e;    
+
+.s2b a span:hover {
+    color: #8e265e;
 }
-.s2b a span i{
+
+.s2b a span i {
     text-decoration: none;
     font-size: 0.8em;
     font-style: normal;
     font-weight: 100;
     color: #256188;
 }
-.s2b a p{
+
+.s2b a p {
     padding: 1px 0px 2px 0px;
     font-size: 1em;
     color: #1c385f;
 }
-.s2b p:hover{
+
+.s2b p:hover {
     color: #8e265e;
 }
-.s2b p i{
-    color:  #7e268e;
+
+.s2b p i {
+    color: #7e268e;
     font-weight: 700;
     font-size: 1.2em;
 }
-.s3{
+
+.s3 {
     position: absolute;
     width: 100%;
     height: 150px;
@@ -252,13 +297,15 @@ ul li a:hover{
     text-align: center;
     padding-top: 50px;
 }
-.s3 a{
+
+.s3 a {
     text-decoration: none;
     color: #fff;
     text-align: center;
     font-size: 3em;
     font-family: "slabo 13px";
 }
-.s3 a span{
+
+.s3 a span {
     color: #79b142;
 }
