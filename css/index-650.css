@@ -1,7 +1,6 @@
 @viewport {
-    width: 1300px auto;
+  width: 1300px auto;
 }
-
 html,
 body {
     margin: 0;
@@ -76,6 +75,7 @@ ul li a:hover {
 #lang {
     height: 100%;
     width: 100%;
+    
 }
 
 .ci {
@@ -88,6 +88,7 @@ ul li a:hover {
     font-size: 1.50em;
     padding-right: 30px;
 }
+
 .ar:hover {
     color: #19a57f;
     cursor: pointer;
@@ -130,11 +131,11 @@ ul li a:hover {
 
 .s1h2 {
     max-width: 95%;
-    border-bottom: 1.5px solid #fff;
     font-size: 2.5em;
     text-align: center;
     padding-bottom: 5px;
     margin-bottom: 15px;
+    border-bottom: 1.5px solid #fff;
 }
 
 .s1next {
