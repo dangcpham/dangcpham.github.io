@@ -26,7 +26,6 @@ function drawing() {
 }
 
 var stage = 0;
-var l1 = $('.s1h2').css('left');
 
 function about() {
     
@@ -123,9 +122,10 @@ $('#c5').click(function () {
     stage = 5;
     ani()
 });
+
 $('#researchlink').click(function () {
     $('html, body').animate({
-        scrollTop: $(".projweb").offset().top
+        scrollTop: $('.projweb').offset().top - 190
     }, 1000);
 });
 $('#back').click(function () {
@@ -135,12 +135,12 @@ $('#back').click(function () {
 });
 $('#aboutlink').click(function () {
     $('html, body').animate({
-        scrollTop: $(".sky-bg").offset().top
+        scrollTop: $(".sky-bg").offset().top + 190
     }, 1000);
 });
 $('#pianolink').click(function () {
     $('html, body').animate({
-        scrollTop: $(".proj").offset().top
+        scrollTop: $(".proj").offset().top - 190
     }, 1000);
 });
 $('#contactlink').click(function () {
