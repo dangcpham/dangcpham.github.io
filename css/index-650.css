@@ -21,7 +21,7 @@ h3 {
     width: 100%;
     right: 0px;
     top: 0px;
-    height: 150px;
+    height: 180px;
     z-index: 10000;
     background: #fff;
     border-bottom: 2px solid #16435d;
@@ -86,8 +86,8 @@ ul li a:hover {
 
 .ar {
     font-size: 1.50em;
+    padding-right: 30px;
 }
-
 .ar:hover {
     color: #19a57f;
     cursor: pointer;
@@ -103,7 +103,7 @@ ul li a:hover {
     background: linear-gradient(#00111e 30%, #033d5e);
     border-bottom: 4px solid #16759b;
     border-top: 8px solid #16759b;
-    height: 500px;
+    height: 520px;
     width: 100%;
     overflow: hidden;
     cursor: pointer;
@@ -151,7 +151,7 @@ ul li a:hover {
 
 .proj {
     position: absolute;
-    top: 520px;
+    top: 570px;
     left: 40%;
     text-align: center;
     color: #0b3571;
@@ -160,7 +160,7 @@ ul li a:hover {
 
 .s2 {
     position: absolute;
-    top: 600px;
+    top: 620px;
     width: 100%;
     height: 400px;
     padding: 50px 0 10px 0;
@@ -223,7 +223,7 @@ ul li a:hover {
 
 .projweb {
     position: relative;
-    top: 1840px;
+    top: 1340px;
     border-bottom: 2px solid #000;
     max-width: 95%;
     cursor: pointer;
@@ -233,7 +233,7 @@ ul li a:hover {
 .s2b {
     margin-left: 2.5%;
     position: relative;
-    top: 1850px;
+    top: 1350px;
     width: 95%;
     max-width: 100%;
     text-align: left;

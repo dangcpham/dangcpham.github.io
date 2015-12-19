@@ -1,4 +1,4 @@
-var stage = 0;
+
 // code for sky drawing is from http://codepen.io/AlienPiglet/pen/hvekG
 function drawing() {
     var c = document.getElementById('sky');
@@ -25,16 +25,19 @@ function drawing() {
 
 }
 
-function about() {
+var stage = 0;
+var l1 = $('.s1h2').css('left');
 
-    var text1 = $('.s1h2').html();
+function about() {
+    
+    var text1 = $('#lang').html();
 
     for (i = 0; i < 7; i++) {
         circref0 = "#c" + (i).toString();
         $(circref0).removeClass('fa-circle');
         $(circref0).addClass('fa-circle-o');
     }
-
+    
     if (stage == 0) {
         text1 = "<i class='fa fa-child'></i> <span id='lang'>Hello, my name is Dang. </span>";
     } else if (stage == 1) {
@@ -47,56 +50,78 @@ function about() {
         text1 = " Check out my works and research <i class='fa fa-book'></i>, ";
     } else if (stage == 5) {
         text1 = " or contact me! <i class='fa fa-envelope'></i>";
-        $('.sky-bg').show()
-        $('.ar').fadeOut(1000)
     }
-
     circref = "#c" + (stage).toString();
     $(circref).removeClass('fa-circle-o');
-    $(circref).addClass('fa-circle');
-
-    $('.s1h2').html(text1);
-
+    $(circref).addClass('fa-circle');    
+    $('#lang').html(text1);
+    
+    
 }
-
+function ani(){
+    $('#lang').css('position','relative');
+    $('#lang').animate({
+          left: '+=2000px'
+    }, 500);
+    $('#lang').animate({
+          left: '-=20000px'
+    }, 0);
+    setTimeout(about, 500);
+    $('#lang').animate({
+          left: '0px'
+    });
+}
 drawing();
 $('#sky').click(function () {
     if (stage < 5) {
         stage += 1
-        about()
+        ani()
     }
 
 });
 $('#forward').click(function () {
     if (stage < 5) {
-        stage += 1
-        about()
+        stage += 1;
+        ani()
+    } else if (stage == 5){
+        stage = 0;
+        ani()
+    }
+
+});
+$('#backward').click(function () {
+    if (stage > 0) {
+        stage -= 1;
+        ani()
+    } else if(stage == 0){
+        stage = 5;
+        ani()
     }
 
 });
 $('#c0').click(function () {
     stage = 0;
-    about()
+    ani()
 });
 $('#c1').click(function () {
     stage = 1;
-    about()
+    ani()
 });
 $('#c2').click(function () {
     stage = 2;
-    about()
+    ani()
 });
 $('#c3').click(function () {
     stage = 3;
-    about()
+    ani()
 });
 $('#c4').click(function () {
     stage = 4;
-    about()
+    ani()
 });
 $('#c5').click(function () {
     stage = 5;
-    about()
+    ani()
 });
 $('#researchlink').click(function () {
     $('html, body').animate({

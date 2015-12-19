@@ -6,6 +6,7 @@ html, body{
     padding: 0;
     font-family: 'Slabo 13px', serif;
     max-width: 100%;
+    overflow-x: hidden;
 }
 h1, h2, h3{
     text-decoration: none;
@@ -86,6 +87,7 @@ ul li a:hover{
 }
 .ar{
     font-size: 1.75em;
+    padding-right: 30px;
 }
 .ar:hover{
     color: #19a57f;
