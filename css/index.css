@@ -155,13 +155,14 @@ ul li a:hover {
 .proj {
     position: absolute;
     top: 770px;
-    left: 45%;
+    width: 100%;
     text-align: center;
     color: #0b3571;
-    border-bottom: 2px solid #000;
     cursor: pointer;
 }
-
+.word{
+    border-bottom: 2px solid #000;
+}
 .s2 {
     position: absolute;
     top: 800px;
@@ -233,9 +234,8 @@ ul li a:hover {
 .projweb {
     position: absolute;
     top: 1280px;
-    left: 45%;
+    width: 100%;
     color: #0b3571;
-    border-bottom: 2px solid #000;
     cursor: pointer;
 }
 

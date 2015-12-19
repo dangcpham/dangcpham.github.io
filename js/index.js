@@ -201,11 +201,10 @@ init()
 $(window).load(function () {
     var viewportWidth = $(window).width();
     if (viewportWidth < 800) {
-        $('.s3').css('top', $('body').prop('scrollHeight') + 450);
+        $('.s3').css('top', $('body').prop('scrollHeight') + 500);
     } else {
         $('.s3').css('top', $('body').prop('scrollHeight') + 150);
     }
-
     setTimeout(ytube, 10);
     drawing();
 });
@@ -213,9 +212,9 @@ $(window).resize(function () {
     init()
     var viewportWidth = $(window).width();
     if (viewportWidth < 800) {
-        $('.s3').css('top', $('body').prop('scrollHeight') + 400);
+        $('.s3').css('top', $('body').prop('scrollHeight') + 500);
     } else {
-        $('.s3').css('top', $('body').prop('scrollHeight') + 200);
+        $('.s3').css('top', $('body').prop('scrollHeight') + 150);
     }
 });
 $(window).scroll(function () {
