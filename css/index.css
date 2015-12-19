@@ -291,18 +291,19 @@ ul li a:hover {
 .s3 {
     position: absolute;
     width: 100%;
-    height: 150px;
+    height: 100px;
     color: #fff;
     background: #256188;
     text-align: center;
     padding-top: 50px;
+    max-height: 100px;
 }
 
 .s3 a {
     text-decoration: none;
     color: #fff;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
     font-family: "slabo 13px";
 }
 
