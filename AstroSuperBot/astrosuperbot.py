@@ -243,9 +243,8 @@ def handle_command(command, channel, name):
                "skychart"] + ["off"]
 
     command_initial = command.split(" ")[0]
-
+    print command, name
     if command_initial in actions:
-        print command, name
         if command_initial == "help":
             action_show = actions[:-1] #not showing the off function in general
             response = str(action_show)
@@ -352,7 +351,6 @@ if __name__ == "__main__":
             command = output_list[0]
             channel = output_list[1]
             real_name = output_list[2]
-            print command, real_name, channel
             if command and channel:
                 command = tools.remove_unicode(command.lower())
                 real_name = tools.remove_unicode(real_name)
