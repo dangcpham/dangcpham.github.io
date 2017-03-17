@@ -246,8 +246,7 @@ def handle_command(command, channel, name, username):
     print command, name
     if command_initial in actions:
         if command_initial == "help":
-            action_show = actions[:-1] #not showing the off function in general
-            response = str(action_show)
+            response = GENERAL_HELP
         elif command_initial == "off": #administrators only
             if (str(name) in ADMINS) and (str(username) in USERNAME_ADMINS):
                 slack_client.api_call("chat.postMessage", channel=channel,
@@ -326,9 +325,8 @@ BOT_ID = getBotID(BOT_NAME, SLACK_BOT_TOKEN)
 AT_BOT = "<@" + BOT_ID + ">"
 READ_WEBSOCKET_DELAY = 1 # 1 second delay between reading from firehose
 CAS_MEMBER_HERE = [] #for storing the members that are here
-
-ADMINS = ["Dang Pham", "Zach Whipps", "Sam Stonebraker"]
-USERNAME_ADMINS = ["U3Z5VT459", "U3ZCUV2F4", "U3Y2V17GC"]
+ADMINS = ["Dang Pham", "Zach Whipps"] #admins
+USERNAME_ADMINS = ["U3Z5VT459", "U3ZCUV2F4"]
 
 FIRST_RUN = True
 CHANNELS_LIST = {}
