@@ -154,11 +154,6 @@ def get_chart(response, command):
         slack_client.api_call("chat.postMessage", channel=channel,
               text=response, as_user=True)
     else:
-        if url_link == "https://www.iau.org/static/archives/images/screen/gem.jpg":
-            url_link = "https://www.iau.org/static/public/constellations/gif/GEM.gif"
-        elif url_link == "https://www.iau.org/static/archives/images/screen/ser.jpg":
-            url_link = "https://www.iau.org/static/public/constellations/gif/SERCP.gif"
-        
         slack_client.api_call("chat.postMessage", channel=channel,
               text=response, attachments='[{"fields": [{"title": " ", \
                    "short": true}],"image_url": "'+url_link+'"}]', as_user=True)
