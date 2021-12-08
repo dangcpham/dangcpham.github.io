@@ -1,3 +1,2 @@
 astrosuperbot.py
 css/index.css
-css/index.css del
