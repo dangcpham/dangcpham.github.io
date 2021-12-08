@@ -66,11 +66,11 @@ function about() {
 
     var text1 = $('#lang').html();
 
-    for (i = 0; i < 7; i++) {
-        circref0 = "#c" + (i).toString();
-        $(circref0).removeClass('fa-circle');
-        $(circref0).addClass('fa-circle-o');
-    }
+    // for (i = 0; i < 7; i++) {
+    //     circref0 = "#c" + (i).toString();
+    //     $(circref0).removeClass('far');
+    //     $(circref0).addClass('fas');
+    // }
 
     if (stage == 0) {
         text1 = "<i class='fa fa-child'></i> <span id='lang'>Hello, my name is Dang. </span>";
@@ -85,22 +85,36 @@ function about() {
     } else if (stage == 5) {
         text1 = " or contact me! <i class='fa fa-envelope'></i>";
     }
-    circref = "#c" + (stage).toString();
-    $(circref).removeClass('fa-circle-o');
-    $(circref).addClass('fa-circle');
+    // circref = "#c" + (stage).toString();
+    // $(circref).removeClass('far');
+    // $(circref).addClass('fas');
     $('#lang').html(text1);
 
 
 }
 
-function ani() {
+function anir() {
     $('#lang').css('position', 'relative');
+    // $('#lang').animate({
+    //     right: '+=2000px'
+    // }, 500);
+    // $('#lang').animate({
+    //     right: '-=20000px'
+    // }, 0);
+    setTimeout(about, 500);
     $('#lang').animate({
-        left: '+=2000px'
-    }, 500);
-    $('#lang').animate({
-        left: '-=20000px'
-    }, 0);
+        right: '0px'
+    });
+}
+
+function anil() {
+    $('#lang').css('position', 'relative');
+    // $('#lang').animate({
+    //     left: '+=2000px'
+    // }, 500);
+    // $('#lang').animate({
+    //     left: '-=20000px'
+    // }, 0);
     setTimeout(about, 500);
     $('#lang').animate({
         left: '0px'
@@ -110,57 +124,58 @@ function ani() {
 $('#sky').click(function () {
     if (stage < 5) {
         stage += 1;
-        ani()
+        anir()
     } else if (stage == 5) {
         stage = 0;
-        ani()
+        anir()
     }
 
 });
 $('#forward').click(function () {
     if (stage < 5) {
         stage += 1;
-        ani()
+        anir()
     } else if (stage == 5) {
         stage = 0;
-        ani()
+        anir()
     }
 
 });
 $('#backward').click(function () {
     if (stage > 0) {
         stage -= 1;
-        ani()
+        anil()
     } else if (stage == 0) {
         stage = 5;
-        ani()
+        anil()
     }
 
 });
-$('#c0').click(function () {
-    stage = 0;
-    ani()
-});
-$('#c1').click(function () {
-    stage = 1;
-    ani()
-});
-$('#c2').click(function () {
-    stage = 2;
-    ani()
-});
-$('#c3').click(function () {
-    stage = 3;
-    ani()
-});
-$('#c4').click(function () {
-    stage = 4;
-    ani()
-});
-$('#c5').click(function () {
-    stage = 5;
-    ani()
-});
+
+// $('#c0').click(function () {
+//     stage = 0;
+//     anir()
+// });
+// $('#c1').click(function () {
+//     stage = 1;
+//     anir()
+// });
+// $('#c2').click(function () {
+//     stage = 2;
+//     anir()
+// });
+// $('#c3').click(function () {
+//     stage = 3;
+//     anir()
+// });
+// $('#c4').click(function () {
+//     stage = 4;
+//     anir()
+// });
+// $('#c5').click(function () {
+//     stage = 5;
+//     anir()
+// });
 
 $('#researchlink').click(function () {
     $('html, body').animate({
