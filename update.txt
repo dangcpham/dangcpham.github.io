@@ -1,1 +1,1 @@
-AstroSuperBot/coordinates.py
+AstroSuperBot/astrosuperbot.py
