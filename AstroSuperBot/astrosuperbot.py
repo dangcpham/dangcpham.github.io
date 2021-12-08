@@ -234,7 +234,7 @@ def get_coord(command):
     if planet: #if there are planets returned
         response += "Planet info last updated on" + str(update_time)
     return response, result1[0][2]
-def handle_command(command, channel, name, username):
+def handle_command(command, channel, name):
     """
         Handle all commands given by the user.
     """
@@ -249,7 +249,7 @@ def handle_command(command, channel, name, username):
             action_show = actions[:-1] #not showing the off function in general
             response = str(action_show)
         elif command_initial == "off": #administrators only
-            if (str(name) in ADMINS) and (str(username) in USERNAME_ADMINS):
+            if (str(name) in ADMINS):
                 slack_client.api_call("chat.postMessage", channel=channel,
                       text='AstroSuperBot off', as_user=True)
                 exit()
@@ -313,9 +313,8 @@ def parse_slack_output(slack_rtm_output):
                 # return text after the @ mention, whitespace removed
                 return [output['text'].split(AT_BOT)[1].strip().lower(),
                        output['channel'], getUserName(output['user'],
-                                                      SLACK_BOT_TOKEN),
-                       output['user']]
-    return [None, None, None, None]
+                                                      SLACK_BOT_TOKEN)]
+    return None, None, None
 
 
 ##### MAIN PROGRAM ####
@@ -326,8 +325,7 @@ BOT_ID = getBotID(BOT_NAME, SLACK_BOT_TOKEN)
 AT_BOT = "<@" + BOT_ID + ">"
 READ_WEBSOCKET_DELAY = 1 # 1 second delay between reading from firehose
 CAS_MEMBER_HERE = [] #for storing the members that are here
-ADMINS = ["Dang Pham", "Zach Whipps"] #admins
-USERNAME_ADMINS = ["U3Z5VT459", "U3ZCUV2F4"]
+ADMINS = ["Dang Pham", "Zach Whipps", "astrobotmaster"] #admins
 
 FIRST_RUN = True
 CHANNELS_LIST = {}
@@ -354,7 +352,6 @@ if __name__ == "__main__":
                 command = output_list[0]
                 channel = output_list[1]
                 real_name = output_list[2]
-                username = str(output_list[3])
                 if command and channel:
                     command = tools.remove_unicode(command.lower())
                     real_name = tools.remove_unicode(real_name)
@@ -362,7 +359,7 @@ if __name__ == "__main__":
                         log_write(str(real_name) + " " + str(CHANNELS_LIST[channel]) + " " + str(command))
                     except:
                         log_write(str(real_name) + " " + str(channel) + " " + str(command))
-                    handle_command(command, channel, real_name, username)
+                    handle_command(command, channel, real_name)
                 time.sleep(READ_WEBSOCKET_DELAY)
         else:
             print("Connection failed. Invalid Slack token or bot ID?")
