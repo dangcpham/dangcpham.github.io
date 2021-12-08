@@ -326,9 +326,8 @@ BOT_ID = getBotID(BOT_NAME, SLACK_BOT_TOKEN)
 AT_BOT = "<@" + BOT_ID + ">"
 READ_WEBSOCKET_DELAY = 1 # 1 second delay between reading from firehose
 CAS_MEMBER_HERE = [] #for storing the members that are here
-
-ADMINS = ["Dang Pham", "Zach Whipps", "Sam Stonebraker"]
-USERNAME_ADMINS = ["U3Z5VT459", "U3ZCUV2F4", "U3Y2V17GC"]
+ADMINS = ["Dang Pham", "Zach Whipps"] #admins
+USERNAME_ADMINS = ["U3Z5VT459", "U3ZCUV2F4"]
 
 FIRST_RUN = True
 CHANNELS_LIST = {}
