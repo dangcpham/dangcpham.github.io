@@ -334,38 +334,33 @@ f = open(LOG_FILE, "ab")
 
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
-if __name__ == "__main__":
-    try:
-        if slack_client.rtm_connect():
-            print("AstroSuperBot connected and running!")
-            if FIRST_RUN:
-                log_write("AstroBot Starting")
-                chan_list = slack_client.api_call("channels.list")
-                group_list = slack_client.api_call("groups.list")
-            for output in chan_list['channels']:
-                CHANNELS_LIST[str(output['id'])] = str(output['name'])
-            for output2 in group_list['groups']:
-                CHANNELS_LIST[str(output2['id'])] = str(output2['name'])
-            log_write("\nStart user log: ", time_bool = False)
-            while True:
-                output_list = parse_slack_output(slack_client.rtm_read())
-                command = output_list[0]
-                channel = output_list[1]
-                real_name = output_list[2]
-                if command and channel:
-                    command = tools.remove_unicode(command.lower())
-                    real_name = tools.remove_unicode(real_name)
-                    try:
-                        log_write(str(real_name) + " " + str(CHANNELS_LIST[channel]) + " " + str(command))
-                    except:
-                        log_write(str(real_name) + " " + str(channel) + " " + str(command))
-                    handle_command(command, channel, real_name)
-                time.sleep(READ_WEBSOCKET_DELAY)
-        else:
-            print("Connection failed. Invalid Slack token or bot ID?")
-            log_write("AstroBot failed to Start. Connection failed.")
-    except Exception as e:
-        print e
-        log_write("Error occured " + str(e))
-        exit()
+if __name__ == "__main__":    
+    if slack_client.rtm_connect():
+        print("AstroSuperBot connected and running!")
+        if FIRST_RUN:
+            log_write("AstroBot Starting")
+            chan_list = slack_client.api_call("channels.list")
+            group_list = slack_client.api_call("groups.list")
+        for output in chan_list['channels']:
+            CHANNELS_LIST[str(output['id'])] = str(output['name'])
+        for output2 in group_list['groups']:
+            CHANNELS_LIST[str(output2['id'])] = str(output2['name'])
+        log_write("\nStart user log: ", time_bool = False)
+        while True:
+            output_list = parse_slack_output(slack_client.rtm_read())
+            command = output_list[0]
+            channel = output_list[1]
+            real_name = output_list[2]
+            if command and channel:
+                command = tools.remove_unicode(command.lower())
+                real_name = tools.remove_unicode(real_name)
+                try:
+                    log_write(str(real_name) + " " + str(CHANNELS_LIST[channel]) + " " + str(command))
+                except:
+                    log_write(str(real_name) + " " + str(channel) + " " + str(command))
+                handle_command(command, channel, real_name)
+            time.sleep(READ_WEBSOCKET_DELAY)
+    else:
+        print("Connection failed. Invalid Slack token or bot ID?")
+        log_write("AstroBot failed to Start. Connection failed.")
 
