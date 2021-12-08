@@ -107,33 +107,32 @@ def get_skychart(command):
               text='', attachments='[{"fields": [{"title": " ", \
                    "short": true}],"image_url": "'+url_link+'"}]', as_user=True)
         return True
-    try:
-        local_tz = pytz.timezone("US/Eastern")
-        year = int(str(command.split(" ")[1]).strip())
-        month = int(str(command.split(" ")[2]).strip())
-        day = int(str(command.split(" ")[3]).strip())
-        hour = int(str(command.split(" ")[4]).strip())
-        minute = int(str(command.split(" ")[5]).strip())
-        second = int(str(command.split(" ")[6]).strip())
-        
-        datetime_without_tz = datetime.datetime(year, month, day, hour, minute, second)
-        datetime_with_tz = local_tz.localize(datetime_without_tz, is_dst=True) # No daylight saving time
-        datetime_in_utc = datetime_with_tz.astimezone(pytz.utc)
 
-        now = datetime_in_utc
+    local_tz = pytz.timezone("US/Eastern")
+    year = int(str(command.split(" ")[1]).strip())
+    month = int(str(command.split(" ")[2]).strip())
+    day = int(str(command.split(" ")[3]).strip())
+    hour = int(str(command.split(" ")[4]).strip())
+    minute = int(str(command.split(" ")[5]).strip())
+    second = int(str(command.split(" ")[6]).strip())
+    datetime_without_tz = datetime.datetime(year, month, day, hour, minute, second)
+    print datetime_without_tz
+    datetime_with_tz = local_tz.localize(datetime_without_tz, is_dst=True) # No daylight saving time
+    print datetime_with_tz
+    datetime_in_utc = datetime_with_tz.astimezone(pytz.utc)
+    print datetime_in_utc
+    now = datetime_in_utc
+    print now
+    julian = str(jd(now)-2400000.5)
+    url_link = "http://www.heavens-above.com/wholeskychart.ashx?lat=42.444&lng=-76.5019&loc=Ithaca&alt=120&tz=EST&size=800&SL=1&SN=1&BW=0&time="+julian+"&ecl=0&cb=0"
+    print url_link
+    log_write("AstroBot " + response.strip())
+    log_write("AstroBot [img]" + url_link)
+    slack_client.api_call("chat.postMessage", channel=channel,
+          text='', attachments='[{"fields": [{"title": " ", \
+               "short": true}],"image_url": "'+url_link+'"}]', as_user=True)
+    return True
 
-        julian = str(jd(now)-2400000.5)
-        url_link = "http://www.heavens-above.com/wholeskychart.ashx?lat=42.444&lng=-76.5019&loc=Ithaca&alt=120&tz=EST&size=800&SL=1&SN=1&BW=0&time="+julian+"&ecl=0&cb=0"
-        log_write("AstroBot [img]" + url_link)
-        slack_client.api_call("chat.postMessage", channel=channel,
-              text='', attachments='[{"fields": [{"title": " ", \
-                   "short": true}],"image_url": "'+url_link+'"}]', as_user=True)
-        return True
-    except:
-        response = 'Error: Invalid format. Use now or YYYY MM DD HH MM SS '
-        log_write("AstroBot " + response.strip())
-        slack_client.api_call("chat.postMessage", channel=channel,
-              text=response, as_user=True)
 def get_chart(response, command):
     """
         Returns a chart of a constellation given from command.
