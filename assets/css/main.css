@@ -5,6 +5,11 @@
     src: url('../fonts/PalatinoR.ttf');
   }  
 
+/* @font-face {
+    font-family: Garamond;
+    src: url('../fonts/Adobe\ Garamond\ Pro.ttf');
+} */
+
 @viewport {
     width: 1300px auto;
 }
@@ -39,7 +44,7 @@ h1,
 h2,
 h3 {
     text-decoration: none;
-    font-family: Palatino;
+    font-family: Garamond;
     font-weight: 700;
     font-size: 1em;
     margin: 0;
@@ -118,8 +123,8 @@ a.active {
 }
 
 section {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 0px;
+    padding-bottom: 15px;
     justify-content: center;
     overflow: hidden;
 
@@ -129,8 +134,7 @@ section {
 }
 
 #about {
-    padding-top: 5%;
-
+    padding-top:2.5%;
 }
 
 #flickr {
