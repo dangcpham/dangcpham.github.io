@@ -1,0 +1,67 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSCLEWHS2J"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QSCLEWHS2J');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Dang Pham (Phạm Cao Đăng)</title>
+    
+    <script type="text/javascript" src="../assets/js/pre.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+            inlineMath: [['$', '$']],
+            processEscapes: true
+            },
+            svg: { fontCache: 'global' },
+        };
+    </script>
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="wrapper">
+        <section>
+            <p class="section-title">Publications <span id="total-count" style="font-size:1rem"></span></p>
+            <span style="font-size: 1em"">View on the <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0924-8403&sort=date+desc">ADS</a> or <a href="https://scholar.google.ca/citations?user=VUr-DnAAAAAJ">Google Scholar</a>.</span>
+            <br><br>
+            <div id="sort-controls" class="sort-controls">
+                <label for="sort-select"><strong>Sort by:</strong></label>
+                <select id="sort-select" onchange="handleSortChange()" class="sort-dropdown">
+                    <option value="first-author" selected>👥 Authorship</option>
+                    <option value="date">📅 Year</option>
+                </select>
+                <!-- <button onclick="toggleSortOrder()" class="sort-btn" id="sort-order-btn">⬆ Desc</button> -->
+            </div>
+            <div id="publist">Loading publications...</div>
+        </section>
+    </div>
+    <div id="footer"></div>
+    
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    
+    
+    <script src="../assets/js/journals.js"></script>
+    <script src="../assets/js/parse_bib.js"></script>
+    
+    <script defer type="text/javascript" src="../assets/js/post.js"></script>
+    <noscript><META HTTP-EQUIV="Refresh" CONTENT="0;URL=JSError.html"></noscript>
+</body>
+
+</html>
