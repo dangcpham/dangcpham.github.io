@@ -215,7 +215,8 @@ function formatEntry(entry) {
     const year = f.year || '';
     const volume = f.volume || '';
     const pages = f.pages || '';
-    const url = f.adsurl ? `<a href="${f.adsurl}">${journal}</a>` : journal;
+    const href = f.adsurl || f.url;
+    const url = href ? `<a href="${href}">${journal}</a>` : journal;
 
     let citation = `${year}`;
     if (url) citation += `, ${url}`;
@@ -372,5 +373,5 @@ function toggleSortOrder() {
   btn.textContent = ascending ? '⬇ Asc' : '⬆ Desc';
   sortPubs(currentSort);
 }
-
 renderBibtex("pubs.bib", "first-author");
+renderBibtex("pubs.bib", "date");
